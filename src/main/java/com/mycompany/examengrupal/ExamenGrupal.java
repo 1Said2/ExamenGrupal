@@ -26,4 +26,19 @@ public class ExamenGrupal {
             }
         }
     }
+
+    public static void ordenarPorMetodoSeleccion(int[] arregloNumeros) {
+        int cantidadElementos = arregloNumeros.length;
+        for (int posicionActual = 0; posicionActual < cantidadElementos - 1; posicionActual++) {
+            int indiceMinimo = posicionActual;
+            for (int indiceBusqueda = posicionActual + 1; indiceBusqueda < cantidadElementos; indiceBusqueda++) {
+                if (arregloNumeros[indiceBusqueda] < arregloNumeros[indiceMinimo]) {
+                    indiceMinimo = indiceBusqueda;
+                }
+            }
+            int valorTemporal = arregloNumeros[indiceMinimo];
+            arregloNumeros[indiceMinimo] = arregloNumeros[posicionActual];
+            arregloNumeros[posicionActual] = valorTemporal;
+        }
+    }
 }
