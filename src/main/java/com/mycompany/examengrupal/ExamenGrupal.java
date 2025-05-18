@@ -3,6 +3,8 @@
  */
 package com.mycompany.examengrupal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author SAID-WINDOWS
@@ -41,7 +43,7 @@ public class ExamenGrupal {
             arregloNumeros[posicionActual] = valorTemporal;
         }
     }
-    
+
     public static void ordenarPorMetodoInsercion(int[] arregloNumeros) {
         int cantidadElementos = arregloNumeros.length;
         for (int i = 1; i < cantidadElementos; i++) {
@@ -57,5 +59,17 @@ public class ExamenGrupal {
             }
             arregloNumeros[j + 1] = valorActual;
         }
+    }
+
+    public static ArrayList<Integer> buscar(int[] arreglo, int valorBuscado) {
+        ArrayList<Integer> posiciones = new ArrayList<>();
+
+        for (int i = 0; i < arreglo.length; i++) {
+            if (arreglo[i] == valorBuscado) {
+                posiciones.add(i);
+            }
+        }
+
+        return posiciones;
     }
 }
