@@ -41,4 +41,21 @@ public class ExamenGrupal {
             arregloNumeros[posicionActual] = valorTemporal;
         }
     }
+    
+    public static void ordenarPorMetodoInsercion(int[] arregloNumeros) {
+        int cantidadElementos = arregloNumeros.length;
+        for (int i = 1; i < cantidadElementos; i++) {
+            int valorActual = arregloNumeros[i];
+            int j = i - 1;
+            while (j >= 0) {
+                if (arregloNumeros[j] < valorActual) {
+                    arregloNumeros[j + 1] = arregloNumeros[j];
+                    j--;
+                } else {
+                    break;
+                }
+            }
+            arregloNumeros[j + 1] = valorActual;
+        }
+    }
 }
