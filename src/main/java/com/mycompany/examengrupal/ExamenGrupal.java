@@ -102,4 +102,22 @@ public class ExamenGrupal {
 
         return posiciones;
     }
+
+    public static ArrayList<Integer> buscarPrimos(int[] arreglo) {
+        ArrayList<Integer> primos = new ArrayList<>();
+        for (int numero : arreglo) {
+            if (esPrimo(numero)) {
+                primos.add(numero);
+            }
+        }
+        return primos;
+    }
+
+    private static boolean esPrimo(int numero) {
+        if (numero < 2) return false;
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) return false;
+        }
+        return true;
+    }
 }
