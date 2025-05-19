@@ -60,6 +60,36 @@ public class ExamenGrupal {
             arregloNumeros[j + 1] = valorActual;
         }
     }
+    
+    public static void ordenarPorConteo(int[] arregloNumeros) {  
+        if (arregloNumeros.length == 0) return;
+
+        int minimo = arregloNumeros[0];
+        int maximo = arregloNumeros[0];
+
+        for (int indice = 1; indice < arregloNumeros.length; indice++) {
+            if (arregloNumeros[indice] < minimo) 
+                minimo = arregloNumeros[indice];
+            if (arregloNumeros[indice] > maximo) 
+                maximo = arregloNumeros[indice];
+        }
+
+        int rango = maximo - minimo + 1;
+        int[] contador = new int[rango];
+
+        for (int indice = 0; indice < arregloNumeros.length; indice++) {
+            contador[arregloNumeros[indice] - minimo]++;
+        }
+
+        int posicion = 0;
+        for (int valor = 0; valor < rango; valor++) {
+            while (contador[valor] > 0) {
+                arregloNumeros[posicion] = valor + minimo;
+                posicion++;
+                contador[valor]--;
+            }
+        }
+    }
 
     public static ArrayList<Integer> buscar(int[] arreglo, int valorBuscado) {
         ArrayList<Integer> posiciones = new ArrayList<>();
