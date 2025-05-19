@@ -121,7 +121,7 @@ public class ExamenGrupal {
         return true;
     }
 
-    public static Integer mayoritario(int[] arr) {
+        public static Integer mayoritario(int[] arr) {
         int candidato = 0, contador = 0;
         for (int n : arr) {
             if (contador == 0) {
