@@ -120,4 +120,22 @@ public class ExamenGrupal {
         }
         return true;
     }
+
+    public static Integer mayoritario(int[] arr) {
+        int candidato = 0, contador = 0;
+        for (int n : arr) {
+            if (contador == 0) {
+                candidato = n;
+                contador = 1;
+            } else if (n == candidato) {
+                contador++;
+            } else {
+                contador--;
+            }
+        }
+        contador = 0;
+        for (int n : arr) if (n == candidato) contador++;
+        if (contador > arr.length / 2) return candidato;
+        return null;
+    }
 }
