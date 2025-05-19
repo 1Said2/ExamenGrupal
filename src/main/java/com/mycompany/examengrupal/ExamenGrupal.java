@@ -62,7 +62,6 @@ public class ExamenGrupal {
     }
     
     public static void ordenarPorConteo(int[] arregloNumeros) {  
-        if (arregloNumeros.length == 0) return;
 
         int minimo = arregloNumeros[0];
         int maximo = arregloNumeros[0];
